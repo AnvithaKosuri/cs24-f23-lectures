@@ -37,7 +37,21 @@ void selection_sort(vector<int>& v){
 }
 
 void simple_heap_sort(vector<int>& v){
-
+priority_queue<int> pq;//max-heaap: element at the top is the maximum element
+     //operations: top()//max value - o(1)
+     //push(x) - insert x into the pq - o(logn)
+     //pop() - delete the max value - o(log n)
+     for(auto e : v) {
+          pq.push(e);
+     }
+     int i = 0;
+     while(!pq.empty())
+          {
+               v[i] = pq.top();
+               pq.pop();
+               i++;
+          }
+     
 }
 
 int main(int argc, char const *argv[])
